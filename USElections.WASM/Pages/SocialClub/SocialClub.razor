@@ -1,0 +1,17 @@
+﻿@page "/USElections/SocialClub"
+@using Radzen.Blazor
+@using USElections.WASM.Components
+@using USElections.Shared.DTOs;
+@using USElections.Shared.SocialClub;
+
+<PageTitle>CLT Social Club</PageTitle>
+
+<RadzenFieldset>
+    <HeaderTemplate>Welcome to the home of CLT Social Club!</HeaderTemplate>
+
+    <ChildContent>
+        <h3>Check out upcoming Social Club events!</h3>
+
+        <EventsGrid Events="@PageData.Events" />
+    </ChildContent>
+</RadzenFieldset>

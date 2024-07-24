@@ -1,0 +1,16 @@
+﻿@inherits LayoutComponentBase
+@using Radzen.Blazor
+
+<div class="mb-3">
+    <RadzenMenu>
+        <RadzenMenuItem Text="Home" Icon="home">
+            <RadzenMenuItem Text="Blazor Home" Path="/BlazorHome"></RadzenMenuItem>
+            <RadzenMenuItem Text="MVC Home" Path="" class="mvc-home-menu-option"></RadzenMenuItem>
+        </RadzenMenuItem>
+        <RadzenMenuItem Text="Social Club" Path="/USElections/SocialClub"></RadzenMenuItem>
+        <RadzenMenuItem Text="Football Migrations" Path="/USElections/FootballTeams"></RadzenMenuItem>
+
+    </RadzenMenu>
+</div>
+
+@Body

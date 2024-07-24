@@ -1,0 +1,19 @@
+﻿@using Radzen.Blazor
+@using USElections.Shared.DTOs;
+
+<RadzenDataGrid Data="@Events" TItem="EventDTO">
+    <Columns>
+        <RadzenDataGridColumn TItem="EventDTO" Property="EventTypeName" Title="Event Type" />
+        <RadzenDataGridColumn TItem="EventDTO" Property="EventName" Title="Event" />
+        <RadzenDataGridColumn TItem="EventDTO" Property="EventDate" Title="Date" />
+        <RadzenDataGridColumn TItem="EventDTO" Property="StartTime" Title="Start Time" />
+        <RadzenDataGridColumn TItem="EventDTO" Property="EndTime" Title="End Time" />
+        <RadzenDataGridColumn TItem="EventDTO" Property="Location" Title="Location" />
+        <RadzenDataGridColumn TItem="EventDTO" Property="Description" Title="Description" />
+    </Columns>
+</RadzenDataGrid>
+
+@code{
+    [Parameter]
+    public IEnumerable<EventDTO> Events { get; set; } = [];
+}

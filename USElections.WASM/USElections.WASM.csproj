@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
+    <PackageReference Include="Radzen.Blazor" Version="4.33.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Home\Components\" />
+    <Folder Include="Pages\SocialClub\Components\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\USElections.Data\USElections.Data.csproj" />
+    <ProjectReference Include="..\USElections.Repos\USElections.Repos.csproj" />
+    <ProjectReference Include="..\USElections.Shared\USElections.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

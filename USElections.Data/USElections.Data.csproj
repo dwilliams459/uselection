@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MigrationSQL\**" />
+    <Compile Remove="Migrations\**" />
+    <Compile Remove="Models\FootballModels\**" />
+    <EmbeddedResource Remove="MigrationSQL\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <EmbeddedResource Remove="Models\FootballModels\**" />
+    <None Remove="MigrationSQL\**" />
+    <None Remove="Migrations\**" />
+    <None Remove="Models\FootballModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Models\FootballModels\Team.cs" />
+    <Compile Include="Models\FootballModels\TeamDetails.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\USElections.Shared\USElections.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

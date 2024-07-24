@@ -1,0 +1,14 @@
+@page "/BlazorHome"
+@using Radzen.Blazor
+@using USElections.WASM.Components
+
+<PageTitle>Blazor Home</PageTitle>
+
+<RadzenFieldset>
+    <HeaderTemplate>Blazor Home</HeaderTemplate>
+
+    <ChildContent>
+        <h2>Check out these upcoming CGI Charlotte events!</h2>
+        <EventsGrid Events="@Events" />
+    </ChildContent>
+</RadzenFieldset>
