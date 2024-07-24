@@ -19,8 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Models\FootballModels\Team.cs" />
-    <Compile Include="Models\FootballModels\TeamDetails.cs" />
+    <Compile Remove="FootbaldBContextFactory.cs" />
+    <Compile Remove="FootballdBContext.cs" />
+    <Compile Remove="Models\CLTWebAppDBContext.cs" />
+    <Compile Remove="Models\Event.cs" />
+    <Compile Remove="Models\EventType.cs" />
   </ItemGroup>
 
   <ItemGroup>

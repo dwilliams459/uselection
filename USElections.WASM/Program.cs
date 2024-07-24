@@ -1,17 +1,19 @@
 using USElections.WASM;
-using USElections.WASM.Repos.Football;
-using USElections.WASM.Repository.Home;
-using USElections.WASM.Repository.SocialClub;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using USElections.WASM.Repos.USStates;
 
-var builder = WebAssemblyHostBuilder.CreateDefault(args);
-builder.RootComponents.Add<App>("#app");
-builder.RootComponents.Add<HeadOutlet>("head::after");
+public class Program
+{
+    private static async Task Main(string[] args)
+    {
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+        builder.RootComponents.Add<App>("#app");
+        builder.RootComponents.Add<HeadOutlet>("head::after");
 
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-builder.Services.AddScoped<ISocialClubRepository, SocialClubRepository>();
-builder.Services.AddScoped<IHomeRepository, HomeRepository>();
-builder.Services.AddScoped<IFootballRepository, FootballRepository>();
+        builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+        builder.Services.AddScoped<IUSStatesRepository, USStatesRepository>();
 
-await builder.Build().RunAsync();
+        await builder.Build().RunAsync();
+    }
+}

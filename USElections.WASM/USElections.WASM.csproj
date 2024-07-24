@@ -7,6 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\FootballMigrations\**" />
+    <Content Remove="Pages\FootballMigrations\**" />
+    <EmbeddedResource Remove="Pages\FootballMigrations\**" />
+    <None Remove="Pages\FootballMigrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\SocialClub\SocialClub.razor.cs" />
+    <Compile Remove="Repos\Football\FootballRepository.cs" />
+    <Compile Remove="Repos\Home\HomeRepository.cs" />
+    <Compile Remove="Repos\Home\IHomeRepository.cs" />
+    <Compile Remove="Repos\Routes\EventsEndpoints.cs" />
+    <Compile Remove="Repos\SocialClub\ISocialClubRepository.cs" />
+    <Compile Remove="Repos\SocialClub\SocialClubRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Components\EventsGrid.razor" />
+    <Content Remove="Pages\SocialClub\SocialClub.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.1" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
@@ -16,6 +38,11 @@
   <ItemGroup>
     <Folder Include="Pages\Home\Components\" />
     <Folder Include="Pages\SocialClub\Components\" />
+    <Folder Include="Repos\Football\" />
+    <Folder Include="Repos\Home\" />
+    <Folder Include="Repos\Routes\" />
+    <Folder Include="Repos\SocialClub\" />
+    <Folder Include="Repos\USStates\" />
   </ItemGroup>
 
   <ItemGroup>

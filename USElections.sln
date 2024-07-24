@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "USElections.Shared", "USEle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "USElections.WASM", "USElections.WASM\USElections.WASM.csproj", "{4548B46D-A787-4B71-B35A-BC1C5745F954}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "USElections.Web", "USElections.Web\USElections.Web.csproj", "{FFD58146-39DA-46F0-B05A-EBF3E8EEA73E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{4548B46D-A787-4B71-B35A-BC1C5745F954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4548B46D-A787-4B71-B35A-BC1C5745F954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4548B46D-A787-4B71-B35A-BC1C5745F954}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFD58146-39DA-46F0-B05A-EBF3E8EEA73E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFD58146-39DA-46F0-B05A-EBF3E8EEA73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFD58146-39DA-46F0-B05A-EBF3E8EEA73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFD58146-39DA-46F0-B05A-EBF3E8EEA73E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

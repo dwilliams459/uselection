@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="SocialClub\**" />
+    <EmbeddedResource Remove="SocialClub\**" />
+    <None Remove="SocialClub\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="DTOs\EventDTO.cs" />
+    <Compile Remove="DTOs\TeamDetailsDTO.cs" />
+    <Compile Remove="DTOs\TeamDTO.cs" />
+  </ItemGroup>
+
 </Project>

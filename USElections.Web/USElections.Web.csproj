@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Events\EventsController.cs" />
+    <Compile Remove="Areas\Football\FootballController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.6" />
   </ItemGroup>
 
@@ -15,6 +20,11 @@
     <ProjectReference Include="..\USElections.Repos\USElections.Repos.csproj" />
     <ProjectReference Include="..\USElections.Shared\USElections.Shared.csproj" />
     <ProjectReference Include="..\USElections.WASM\USElections.WASM.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Events\" />
+    <Folder Include="Areas\Football\" />
   </ItemGroup>
 
 </Project>

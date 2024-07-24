@@ -7,7 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Events\**" />
+    <Compile Remove="Football\**" />
+    <EmbeddedResource Remove="Events\**" />
+    <EmbeddedResource Remove="Football\**" />
+    <None Remove="Events\**" />
+    <None Remove="Football\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\USElections.Data\USElections.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>
