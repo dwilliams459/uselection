@@ -1,1 +1,2 @@
-﻿<path d="@State.Path" fill="lightgray" stroke="black" transform="translate(@State.TransformX, @State.TransformY)" onclick="OnStateClick" />
+﻿<path d="@State.Path" fill="@FillColor" stroke="black" transform="translate(-309, -409)" stroke-width="@State.StrokeWidth" @onclick="OnStateClick"  />
+<text x="@TextLocationX()" y="@TextLocationY()" font-family="Verdana" font-size="12" fill="blue" >@State.Name</text>

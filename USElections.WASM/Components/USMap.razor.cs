@@ -14,6 +14,7 @@ namespace USElections.WASM.Components
 
         public USMap()
         {
+            USStates = new List<USStateDTO>();
         }
 
         public async Task InitializeAsync()

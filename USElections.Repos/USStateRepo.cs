@@ -39,8 +39,8 @@ namespace USElections.Repos
                     RegionId = usState.RegionId,
                     RegionName = usState.RegionName,
                     StateId = usState.StateId,
-                    TransformX = usState.TransformX,
-                    TransformY = usState.TransformY
+                    TextLocationX = usState.TextLocationX,
+                    TextLocationY = usState.TextLocationY
                 });
             });
 

@@ -16,11 +16,12 @@ namespace USElections.Shared.DTOs
         public int? RegionId { get; set; }
         public int? RegionName { get; set; }
         public int StateId { get; set; }
-        public string Path { get; set; } = string.Empty ;
         public string PathType { get; set; } = string.Empty;
         public string PathSuffix { get; set; } = string.Empty;
         public bool? IsTerritory { get; set; }
-        public decimal? TransformX { get; set; } = 0;
-        public decimal? TransformY { get; set; } = 0;
+        public decimal? StrokeWidth { get; set; }
+        public decimal? TextLocationX { get; set; }
+        public decimal? TextLocationY { get; set; }
+        public string Path { get; set; } = string.Empty;
     }
 }
