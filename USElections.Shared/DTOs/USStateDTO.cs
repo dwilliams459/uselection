@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace USElections.Shared.DTOs
 {
     public class USStateDTO
     {
+        [Key]
         public int GID { get; set; }
         public string Name { get; set; } = string.Empty;
         public int? Electors { get; set; }

@@ -42,7 +42,6 @@
     <Folder Include="Repos\Home\" />
     <Folder Include="Repos\Routes\" />
     <Folder Include="Repos\SocialClub\" />
-    <Folder Include="Repos\USStates\" />
   </ItemGroup>
 
   <ItemGroup>

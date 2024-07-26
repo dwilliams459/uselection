@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [ 
+        {
+            "name": "C#: USElections WASM Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/USElections.WASM/USElections.WASM.csproj"
+        },
+        {
+            "name": "US Elections Web",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/USElections.Web/bin/Debug/net8.0/USElections.Web.dll",
+                       //"C:\Projects\sandbox/UsElections/USElections.Web/bin/Debug/net8.0/USElections.Web.dll"
+            "args": [],
+            "cwd": "${workspaceFolder}/USElections.Web",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "justMyCode": false,
+            "logging": {
+                "moduleLoad": false,
+            }
+        },
+        {
+            "name": "Attach Blazor WASM",
+            "type": "blazorwasm",
+            "request": "attach",
+            "cwd": "${workspaceFolder}/USElections.WASM",
+            "url": "https://localhost:5003",  // Tell launch where to find site
+            "timeout": 120000, // Allows time for the site to launch
+        }
+
+    ]
+}

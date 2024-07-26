@@ -1,20 +1,19 @@
 ﻿using Microsoft.AspNetCore.Components;
 using USElections.Shared.DTOs;
-using USElections.WASM.Repos;
+using USElections.WASM.Repos.USStates;
 
 namespace USElections.WASM.Components
 {
     public partial class USMap
     {
-        private IUSStatesRepository _stateRepo;
+        [Inject]
+        private IUSStatesRepository _stateRepo { get; set; }
 
         [Parameter]
         public List<USStateDTO> USStates { get; set; }
 
-        public USMap(IUSStatesRepository stateRepo)
+        public USMap()
         {
-            _stateRepo = stateRepo;
-            USStates = new List<USStateDTO>();
         }
 
         public async Task InitializeAsync()

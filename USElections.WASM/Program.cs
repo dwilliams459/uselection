@@ -11,7 +11,9 @@ public class Program
         builder.RootComponents.Add<App>("#app");
         builder.RootComponents.Add<HeadOutlet>("head::after");
 
-        builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+        var baseAddress = new Uri("https://localhost:5003");
+
+        builder.Services.AddScoped(sp => new HttpClient { BaseAddress = baseAddress });
         builder.Services.AddScoped<IUSStatesRepository, USStatesRepository>();
 
         await builder.Build().RunAsync();

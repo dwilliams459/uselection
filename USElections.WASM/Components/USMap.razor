@@ -1,5 +1,8 @@
 ﻿<h3>USMap</h3>
 
-@code {
-
-}
+<svg>
+    @foreach(var state in USStates)
+    {
+        <USStateComponent State=@state  />
+    }
+</svg>

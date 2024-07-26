@@ -1,21 +1,18 @@
 using USElections.Data;
 using USElections.Data.Models;
-using USElections.Repos.Events;
-using USElections.Repos.Football;
 using Microsoft.EntityFrameworkCore;
+using USElections.Repos;
+using USElections.Repos.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<USElectionsDBContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddDbContext<FootballdBContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("FootballConnection")));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("USStatesDb")));
 
 // Repository Pattern
-builder.Services.AddScoped<IEventsRepository, EventsRepository>();
-builder.Services.AddScoped<IfootballRepo,footballRepo>();
+builder.Services.AddScoped<IUSStateRepo, USStateRepo>();
 
 var app = builder.Build();
 
@@ -27,10 +24,11 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseCors(cp => cp.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
 app.UseHttpsRedirection(); 
 app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
-
 
 app.UseRouting();
 
@@ -41,6 +39,7 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllerRoute(
        name: "default",
        pattern: "{controller=Home}/{action=Index}/{id?}");
+
     endpoints.MapFallbackToFile("index.html");
 
     endpoints.MapAreaControllerRoute(
