@@ -4,13 +4,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-Truncate Table USStates
+Truncate Table USStatesOld
 GO
 
-DROP TABLE IF EXISTS [dbo].[UsStates]
+DROP TABLE IF EXISTS [dbo].[UsStatesOld]
 GO
 
-CREATE TABLE [dbo].[UsStates](
+CREATE TABLE [dbo].[UsStatesOld](
 	[GID] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](70) NOT NULL,
 	[Electors] [int] NULL,
@@ -30,17 +30,17 @@ CREATE TABLE [dbo].[UsStates](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[UsStates] ADD  CONSTRAINT [DEFAULT_UsStates_RegionId]  DEFAULT ((1)) FOR [RegionId]
+ALTER TABLE [dbo].[USStatesOld] ADD  CONSTRAINT [DEFAULT_UsStates_RegionId]  DEFAULT ((1)) FOR [RegionId]
 GO
-ALTER TABLE [dbo].[UsStates] ADD  CONSTRAINT [DEFAULT_UsStates_StateId]  DEFAULT ((1)) FOR [StateId]
+ALTER TABLE [dbo].[USStatesOld] ADD  CONSTRAINT [DEFAULT_UsStates_StateId]  DEFAULT ((1)) FOR [StateId]
 GO
-ALTER TABLE [dbo].[UsStates] ADD  DEFAULT ('path') FOR [PathType]
+ALTER TABLE [dbo].[USStatesOld] ADD  DEFAULT ('path') FOR [PathType]
 GO
-ALTER TABLE [dbo].[UsStates] ADD  DEFAULT ('d') FOR [PathSuffix]
+ALTER TABLE [dbo].[USStatesOld] ADD  DEFAULT ('d') FOR [PathSuffix]
 GO
-ALTER TABLE [dbo].[UsStates] ADD  DEFAULT ((0)) FOR [IsTerritory]
+ALTER TABLE [dbo].[USStatesOld] ADD  DEFAULT ((0)) FOR [IsTerritory]
 GO
-ALTER TABLE [dbo].[UsStates] ADD  DEFAULT ((0)) FOR [TextLocationX]
+ALTER TABLE [dbo].[USStatesOld] ADD  DEFAULT ((0)) FOR [TextLocationX]
 GO
-ALTER TABLE [dbo].[UsStates] ADD  DEFAULT ((0)) FOR [TextLocationY]
+ALTER TABLE [dbo].[USStatesOld] ADD  DEFAULT ((0)) FOR [TextLocationY]
 GO
