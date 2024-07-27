@@ -7,5 +7,6 @@ namespace USElections.Repos.Interfaces
     public interface IUSStateRepo
     {
         Task<List<USStateDTO>> GetUSStates();
+        Task<List<StateBulletsDTO>> GetStateBullets();
     }
 }

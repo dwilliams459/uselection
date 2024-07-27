@@ -12,16 +12,18 @@ namespace USElections.Data.Models
         [Key]
         public int GID { get; set; }
         public string Name { get; set; } = string.Empty;
-        public int? Electors { get; set; }
-        public int? RegionId { get; set; }
-        public int? RegionName { get; set; }
-        public int StateId { get; set; }
-        public string PathType { get; set; } = string.Empty;
-        public string PathSuffix { get; set; } = string.Empty;
-        public bool? IsTerritory { get; set; }
-        public decimal? StrokeWidth { get; set; }
-        public decimal? TextLocationX { get; set; }
-        public decimal? TextLocationY { get; set; }
+        public string Fill { get; set; } = string.Empty;
+        public string Stroke { get; set; } = string.Empty;
         public string Path { get; set; } = string.Empty;
+        public string Class { get; set; } = string.Empty;
+        public decimal? Opacity { get; set; }
+        public decimal? StrokeOpacity { get; set; }
+        public decimal? StrokeWidth { get; set; }
+        public string StrokeLinejoin { get; set; } = string.Empty;
+        public string Transform { get; set; } = string.Empty;
+        public string Style { get; set; } = string.Empty;
+        public decimal? FillOpacity { get; set; }
+
+        public StateBullets? StateBullets { get; set; }
     }
 }

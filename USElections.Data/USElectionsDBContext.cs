@@ -16,6 +16,20 @@ namespace USElections.Data
         }
 
         public DbSet<USState> USStates { get; set; }
+        public DbSet<StateBullets> StateBullets { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<USState>(entity =>
+            {
+                entity.HasKey(e => e.GID);
+            });
+
+            modelBuilder.Entity<StateBullets>(entity =>
+            {
+                entity.HasKey(e => e.ID);
+            });
+        }
 
     }
 }

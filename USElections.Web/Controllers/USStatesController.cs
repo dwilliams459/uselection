@@ -24,5 +24,14 @@ namespace USElections.Web.Controllers
 
             return Json(states);
         }
+
+        [HttpGet]
+        [Route("statebullets")]
+        public async Task<IActionResult> GetStateBullets()
+        {
+            List<StateBulletsDTO> states = await _stateRepo.GetStateBullets();
+
+            return Json(states);
+        }
     }
 }

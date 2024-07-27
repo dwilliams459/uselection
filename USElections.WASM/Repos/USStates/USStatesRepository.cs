@@ -31,6 +31,17 @@ namespace USElections.WASM.Repos.USStates
         }
 
 
-
+        public async Task<List<StateBulletsDTO>> GetStateBullets()
+        {
+            try
+            {
+                var stateBullets = await _client.GetFromJsonAsync<List<StateBulletsDTO>>("statebullets") ?? new List<StateBulletsDTO>();
+                return stateBullets;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }            
+        }
     }
 }
