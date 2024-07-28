@@ -12,6 +12,7 @@ namespace USElections.Data.Models
         [Key]
         public int GID { get; set; }
         public string Name { get; set; } = string.Empty;
+        public int Electors { get; set; }
         public string Fill { get; set; } = string.Empty;
         public string Stroke { get; set; } = string.Empty;
         public string Path { get; set; } = string.Empty;

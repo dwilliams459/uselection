@@ -36,6 +36,7 @@ namespace USElections.Repos
                     GID = usState.state.GID,
                     Name = usState.state.Name,
                     Fill = usState.state.Fill,
+                    Electors = usState.state.Electors,
                     Stroke = usState.state.Stroke,
                     Path = usState.state.Path,
                     Class = usState.state.Class,

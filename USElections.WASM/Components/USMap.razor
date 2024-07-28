@@ -1,11 +1,13 @@
 ﻿<h3>USMap</h3>
 
+<ElectorTotals USStates=@USStates/>
+
 <svg width="1000" height="1000">
     if (USStates != null)
     {
         @foreach(var state in USStates)
         {
-            <USStateComponent State=@state  />
+            <USStateComponent State=@state OnStateUpdated=@HandleOnStateUpdated  />
         }
     }
 

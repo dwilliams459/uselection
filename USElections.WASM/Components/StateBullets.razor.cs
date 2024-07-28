@@ -23,24 +23,14 @@ namespace USElections.WASM.Components
             };
         } } 
 
-        // public decimal TransformX { get; set; } = -306;
-        // public decimal TransformY { get; set; } = -409;
-
         [Parameter]
         public USStatePartyEnum StateParty { get; set; } = USStatePartyEnum.None;
-
-        // public decimal? TextLocationX() => (State.TextLocationX + TransformX);
-        // public decimal? TextLocationY() => (State.TextLocationY + TransformY);
 
         public string mousePointerMessage = string.Empty;
 
         [Parameter]
         public EventCallback<string> OnStateClicked { get; set; }
 
-        // public async Task OnStateClick(MouseEventArgs e)
-        // {
-        //     await OnStateClicked.InvokeAsync(State.Path);
-        // }
 
         private void OnStateClick(MouseEventArgs e)
         {

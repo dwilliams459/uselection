@@ -12,6 +12,7 @@ namespace USElections.Shared.DTOs
         [Key]
         public int GID { get; set; }
         public string Name { get; set; } = string.Empty;
+        public int Electors { get; set; }
         public string Fill { get; set; } = string.Empty;
         public string Stroke { get; set; } = string.Empty;
         public string Path { get; set; } = string.Empty;
@@ -28,6 +29,8 @@ namespace USElections.Shared.DTOs
         public decimal? LabelY { get; set; }
         public decimal? TextX { get; set; }
         public decimal? TextY { get; set; }
+
+        public USStatePartyEnum Party { get; set; } = USStatePartyEnum.None;
 
         public bool HasBullet { get => LabelX > 0; }
     }

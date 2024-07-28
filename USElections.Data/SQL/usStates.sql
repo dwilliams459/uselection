@@ -11,7 +11,7 @@ CREATE TABLE USStates (
     [NAME] VARCHAR(20),
     labelX decimal(8,4),
     labelY decimal(8,4),
-    electors int,
+    electors int default 1,
     Fill	VARCHAR(512),
     Stroke	VARCHAR(512),
     [Path]	TEXT,

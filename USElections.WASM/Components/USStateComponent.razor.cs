@@ -16,7 +16,7 @@ namespace USElections.WASM.Components
         {
             get
             {
-                return StateParty switch
+                return State.Party switch
                 {
                     USStatePartyEnum.Republican => "#ff4d4d",
                     USStatePartyEnum.Democrat => "#6666ff",
@@ -25,31 +25,25 @@ namespace USElections.WASM.Components
             }
         }
 
-        // public decimal TransformX { get; set; } = -306;
-        // public decimal TransformY { get; set; } = -409;
-
-        [Parameter]
-        public USStatePartyEnum StateParty { get; set; } = USStatePartyEnum.None;
-
-        // public decimal? TextLocationX() => (State.TextLocationX + TransformX);
-        // public decimal? TextLocationY() => (State.TextLocationY + TransformY);
-
-        public string mousePointerMessage = string.Empty;
-
         [Parameter]
         public EventCallback<string> OnStateClicked { get; set; }
+
+        [Parameter]
+        public EventCallback<USStateDTO> OnStateUpdated { get; set; }
+
         public static object StatePartyEnum { get; private set; } = USStatePartyEnum.None;
 
         private void OnStateClick(MouseEventArgs e)
         {
-            Console.WriteLine("OnStateClick");
-            mousePointerMessage = $"Mouse coordinates: {e.ScreenX}:{e.ScreenY}";
-            StateParty = StateParty switch
+            State.Party = State.Party switch
                 {
                     USStatePartyEnum.Republican => USStatePartyEnum.Democrat,
                     USStatePartyEnum.Democrat => USStatePartyEnum.None,
                     _ => USStatePartyEnum.Republican
                 };
+            State.Party = State.Party;
+
+            OnStateUpdated.InvokeAsync(State);
         }
 
         public MarkupString BulletText()
