@@ -5,7 +5,7 @@ using USElections.WASM.Repos.USStates;
 
 namespace USElections.WASM.Components;
 
-public partial class USMap
+public partial class USMap : ComponentBase
 {
     [Inject]
     private IUSStatesRepository _stateRepo { get; set; }

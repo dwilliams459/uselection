@@ -23,35 +23,36 @@ namespace USElections.Repos
         public async Task<List<USStateDTO>> GetUSStates()
         {
             //var usStates = await _context.USStates.Include(s => s.StateBullets).ToListAsync();
-            var usStates = from state in _context.USStates
-                           join bullet in _context.StateBullets on state.GID equals bullet.GID into ps
-                           from bullet in ps.DefaultIfEmpty()
-                           select new { state, bullet };
+            var usStates = _context.USStates;
+                           //join bullet in _context.StateBullets on state.GID equals bullet.GID into ps
+                           //from bullet in ps.DefaultIfEmpty()
+                           //select new { state }; //, bullet };
 
             var usStatesDTO = new List<USStateDTO>();
             usStates.ToList().ForEach(usState =>
             {
                 usStatesDTO.Add(new USStateDTO
                 {
-                    GID = usState.state.GID,
-                    Name = usState.state.Name,
-                    Fill = usState.state.Fill,
-                    Electors = usState.state.Electors,
-                    Stroke = usState.state.Stroke,
-                    Path = usState.state.Path,
-                    Class = usState.state.Class,
-                    Opacity = usState.state.Opacity,
-                    StrokeOpacity = usState.state.StrokeOpacity,
-                    StrokeWidth = usState.state.StrokeWidth,
-                    StrokeLinejoin = usState.state.StrokeLinejoin,
-                    Transform = usState.state.Transform,
-                    Style = usState.state.Style,
-                    FillOpacity = usState.state.FillOpacity,
-
-                    LabelX = usState.bullet?.LabelX, 
-                    LabelY = usState.bullet?.LabelY,
-                    TextX =  usState.bullet?.TextX,
-                    TextY =  usState.bullet?.TextY
+                    GID = usState.GID,
+                    Name = usState.Name,
+                    Fill = usState.Fill,
+                    Electors = usState.Electors,
+                    Stroke = usState.Stroke,
+                    Path = usState.Path,
+                    Class = usState.Class,
+                    Opacity = usState.Opacity,
+                    StrokeOpacity = usState.StrokeOpacity,
+                    StrokeWidth = usState.StrokeWidth,
+                    StrokeLinejoin = usState.StrokeLinejoin,
+                    Transform = usState.Transform,
+                    Style = usState.Style,
+                    FillOpacity = usState.FillOpacity,
+                    LabelX = usState.LabelX,
+                    LabelY = usState.LabelY,
+                    BulletX = usState.BulletX,
+                    BulletY = usState.BulletY
+                    //BulletX = usState.bullet?.BulletX,
+                    //BulletY = usState.bullet?.BulletY
                 });
             });
 

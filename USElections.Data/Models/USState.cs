@@ -16,8 +16,8 @@ namespace USElections.Data.Models
 
         public decimal? BulletX { get; set; }
         public decimal? BulletY { get; set; }
-        public decimal? labelX { get; set; }
-        public decimal? labelY { get; set; }
+        public decimal? LabelX { get; set; }
+        public decimal? LabelY { get; set; }
 
         public string Fill { get; set; } = string.Empty;
         public string Stroke { get; set; } = string.Empty;

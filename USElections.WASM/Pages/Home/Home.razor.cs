@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace USElections.WASM.Pages.Home
 {
-    public partial class Home
+    public partial class Home : ComponentBase
     {
         //[Inject]
         //private IHomeRepository HomeRepository { get; set; } = default!;

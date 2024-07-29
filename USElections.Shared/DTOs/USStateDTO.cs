@@ -16,9 +16,6 @@ namespace USElections.Shared.DTOs
         
         public decimal? BulletX { get; set; }
         public decimal? BulletY { get; set; }
-        public decimal? labelX { get; set; }
-        public decimal? labelY { get; set; }
-
         public string Fill { get; set; } = string.Empty;
         public string Stroke { get; set; } = string.Empty;
         public string Path { get; set; } = string.Empty;
@@ -33,11 +30,9 @@ namespace USElections.Shared.DTOs
 
         public decimal? LabelX { get; set; }
         public decimal? LabelY { get; set; }
-        public decimal? TextX { get; set; }
-        public decimal? TextY { get; set; }
 
         public USStatePartyEnum Party { get; set; } = USStatePartyEnum.None;
 
-        public bool HasBullet { get => LabelX > 0; }
+        public bool HasBullet { get => BulletX > 1; }
     }
 }
